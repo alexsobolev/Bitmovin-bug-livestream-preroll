@@ -13,8 +13,7 @@ import com.bitmovin.player.api.advertising.AdvertisingConfig
 import com.bitmovin.player.api.source.SourceConfig
 import com.bitmovin.player.samples.ads.basic.databinding.ActivityMainBinding
 
-private const val AD_SOURCE_1 =
-    "https://ib.adnxs.com/ptv?member=7823&publisher=1000494&inv_code=bild.de-app_android_phone-video_video-pre&vwidth=&vheight=&vplaybackmethod=3&kw_vidContentId=50277754&kw_misc=Virale Videos,Zoo,Flusspferd,Lebensmittel,viral,Tierbabys&appid=com.netbiscuits.bild.android&aaid=c36c2611-bdbd-4531-9392-09b5810f3ee8&size=1x1&pt0=68807&pt1=video&pt2=app.bild.de&pt3=app.bild&LimitAdTrackingEnabled=false&test=1&kw_test=nativeapp&kw_aboLevel=1&gdpr=1&gdpr_consent=CPiiZAAPiiZAAFZABCDECqCgAP_AAEgAAAYgIcpZ_T7VbWFCef59aPsgOYxXVMCWAuQCCASAA2ABgAKQcDwCkmAaNESgBgACAQAAoRJBIAIEDAEECUAAYAAEAAGgAAAEhAAIIABAgBEAAAIYAAoCAAAAAACIgAAREAAAmRgYA8bmGEAAxAAQYAAQgAAAAAAAAgMAAAAAAAIAAAAAAAgAAAAAAAIIcoBmSLVTUFA6ehJKAAACIAQVAAQACAACACAAiAAgAAQYAwAAEAaAECAAAAAAAAAgBABAAAAAAAEAEAAIAAEAACgAAAAAAAAAABAgBEAAAAQAAgCAIAAAAAAAAAAAAAAgBAQAAJCGAAAAAAQAAAEgAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAICIyAKAEMAJgBHAF5gM8GAAgCxAHVEQBwBDAD8AOqAkQBOwCkQGTiAAIAJAoB8AAIACgARQAnACgAFQALAAdgA9ACEAEcAKQAVwBogDVAHGAQiAkwCTgE0AJ2AX4A9AB-wD-gJLAS0Av4BjIDHAGnANrAdUGgFABcAEMAPwAgoB1QEiAJ2AUiAycBngYAEAdQBTYqAMAEMAJgAXACOALzAZ4KABAEFAOqOgaAALAAqABkADgAIAAZAA0AB4AD6AIYAigBMACeAFWALgAugBiADeAHMAPwAhgBEACWAEwAKMAUoAsQBbgDDAGiAPaAfgB-gEWgI4AjoBKQCxAFzALqAYoA3ABxADqAHoAReAkQBOwChwF5gL6AYMAycBlgDVQIcjgC0ADgAPAAuACQAHIAPwAoADNAILAQcBCACIgF6AMCAZkA14B0gDqgJWAU2ArsBkIDJgG0EICgACwAMgBDACYAFUALgAYgA3gClAFiARwAlIBcwDFAHUAPQAkQBk4DPAGqkAAoAzQCCgFiAMyAdUlAaAAWABkADgAPAAiABMACqAFwAMQAhgBEACjAFKALcAfgBHAC6gGKANwAdQBF4CRAF5gMnAZYAzwkAIAAuADkAZoBBwDMgGvAOqAlYpAoAAWABUADIAHAAQAAyABoADyAIYAigBMACeAFIAKoAYgA5gB-AEMAIgAUYApQBYgC3AGjAPwA_QCLQEcAR0AlIBcwDFAG4APQAi8BIgCdgFDgLzAX0AycBlgDPCgBAAC4AJAAcgA_ADaAM0Ag4BJwCxAF1ANeAdUBTYCuwGTAOCAAAA.YAAAAAAAAAAA&kw_gdpr_applies=0"
+private const val AD_SOURCE_1 = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
 
 class MainActivity : AppCompatActivity() {
     private lateinit var playerView: PlayerView
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT,
             )
-            player?.load(SourceConfig.fromUrl("https://bild.personalstream.tv/v1/master.m3u8?devtype=tv&ads.country=de&ads.uid=bildde&ads.pf=bildtv&ads.cpid=bild"))
+            player?.load(SourceConfig.fromUrl("https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
         }
 
         // Add PlayerView to the layout
