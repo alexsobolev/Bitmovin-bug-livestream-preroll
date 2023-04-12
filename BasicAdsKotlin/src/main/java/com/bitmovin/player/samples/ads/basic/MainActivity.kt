@@ -10,10 +10,12 @@ import com.bitmovin.player.api.advertising.AdItem
 import com.bitmovin.player.api.advertising.AdSource
 import com.bitmovin.player.api.advertising.AdSourceType
 import com.bitmovin.player.api.advertising.AdvertisingConfig
+import com.bitmovin.player.api.media.AdaptationConfig
 import com.bitmovin.player.api.source.SourceConfig
 import com.bitmovin.player.samples.ads.basic.databinding.ActivityMainBinding
 
-private const val AD_SOURCE_1 = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
+private const val AD_SOURCE_1 =
+    "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
 
 class MainActivity : AppCompatActivity() {
     private lateinit var playerView: PlayerView
@@ -34,7 +36,10 @@ class MainActivity : AppCompatActivity() {
         val advertisingConfig = AdvertisingConfig(preRoll)
 
         // Create a new PlayerConfig containing the advertising config. Ads in the AdvertisingConfig will be scheduled automatically.
-        val playerConfig = PlayerConfig(advertisingConfig = advertisingConfig)
+        val playerConfig = PlayerConfig(
+            advertisingConfig = advertisingConfig,
+            adaptationConfig = AdaptationConfig(initialBandwidthEstimateOverride = 50000L),
+        )
 
         // Create new PlayerView with our PlayerConfig
         playerView = PlayerView(this, Player.create(this, playerConfig)).apply {
